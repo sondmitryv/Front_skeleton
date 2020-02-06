@@ -34,7 +34,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[contenthash].js`,
     path: PATHS.dist,
-    publicPath: "/"
+    /*publicPath: "/" */
   },
   optimization: {
     splitChunks: {
@@ -90,7 +90,10 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
-            options: { sourceMap: true }
+            options: {
+                sourceMap: true,
+                url: false
+            }
           },
           {
             loader: "postcss-loader",
